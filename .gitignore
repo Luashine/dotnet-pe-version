@@ -1,0 +1,5 @@
+# I will store my own files there.
+my-release/
+# Created during compilation
+bin/
+obj/
