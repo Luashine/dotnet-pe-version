@@ -6,8 +6,16 @@
     <RootNamespace>dotnet_pe_version</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+
     <!-- Set Default PE Version https://stackoverflow.com/a/58631756 -->
-    <Version Condition="'$(Version)' == ''">1.2.3.456</Version>
+    <!-- God I love official MS Docs, proof: https://yancyn.gitlab.io/programming/2020/10/20/build-git-hash-as-version -->
+    <FileVersion Condition="'$(FileVersion)' == ''">1.2.3.400</FileVersion>
+    <InformationalVersion Condition="'$(InformationalVersion)' == ''">1.2.3.500</InformationalVersion>
+    <!-- https://learn.microsoft.com/en-us/cpp/build/reference/common-macros-for-build-commands-and-properties?view=msvc-170 -->
+    <!-- No idea how to easily make the final binary name have the os+arch name, Platform macro is always AnyCPU -->
+    <!-- You cannot rename the final binaries either, they're dynamically linked and cant find the .dll later -->
+    <Deterministic>true</Deterministic>
+    <Optimize>false</Optimize>
   </PropertyGroup>
 
 </Project>

@@ -5,6 +5,10 @@ This is a minimal program to test the `Version` field in PE headers. A ready bin
 1. The **Version** is present in PE header
 2. The **Version** is printed to STDOUT when run.
 
+- `FileVersion` == `1.2.3.400`
+- `InformationalVersion` == `1.2.3.500` (aka ProductVersion)
+- STDOUT text == `1.2.3.400`
+
 Compiled for .net 6.0.
 
 ## Compilation instructions
